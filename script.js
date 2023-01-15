@@ -9,7 +9,8 @@ prevBtn.addEventListener("click", prevImg);
 
 closeBtn.addEventListener("click", (e) => {
 	mainImg.style.display = "none";
-	mainImg.classList.remove("active");
+	let blur = document.getElementById("container-blur");
+    blur.classList.remove("active");
 });
 
 // Creating Animation For Image Transition
@@ -67,6 +68,8 @@ for (let image of images) {
 		showImg.src =
 			imagesArray[selectedImg !== undefined ? selectedImg : currentSelectedImg];
 		selectedImg = currentSelectedImg;
+		let blur = document.getElementById("container-blur");
+		blur.classList.add("active");
 	});
 }
 
